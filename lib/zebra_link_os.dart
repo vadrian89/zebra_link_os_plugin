@@ -46,4 +46,18 @@ class ZebraLinkOs implements ZebraLinkOsPluginInterface {
         y: y,
         insideFormat: insideFormat,
       );
+
+  @override
+  Future<bool> storeImage({
+    required String filePath,
+    required String deviceDriveAndFileName,
+    int width = 0,
+    int height = 0,
+  }) =>
+      _instance.storeImage(
+        filePath: filePath,
+        deviceDriveAndFileName: deviceDriveAndFileName,
+        width: width,
+        height: height,
+      );
 }
