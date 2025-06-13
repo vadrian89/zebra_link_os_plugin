@@ -14,7 +14,7 @@ dependencies:
   zebra_link_os_android: 
     git: 
       url: https://github.com/vadrian89/zebra_link_os_android
-      ref: 513f07782f3ee67e87f88274fe0260c368bae345
+      ref: d0ad756a2314dbcf1d6c0655dd85a3eb5c1c5571
   zebra_link_os_platform_core: 
     git: 
       url: https://github.com/vadrian89/zebra_link_os_platform_core

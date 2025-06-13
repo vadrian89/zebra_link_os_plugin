@@ -1,12 +1,13 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:zebra_link_os_plugin/zebra_link_os.dart';
 
+import 'buttons/app_elevated_button.dart';
 import 'bluetooth_permissions.dart';
+import 'buttons/find_printers_button.dart';
+import 'buttons/print_image_button.dart';
+import 'buttons/print_test_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,11 +47,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) => MaterialApp(
         home: FutureBuilder(
           future: _requestedPermissions,
-          builder: (context, snapshot) {
-            return Scaffold(
-              appBar: AppBar(
-                title: const Text("Plugin example app"),
-              ),
+          builder: (context, snapshot) => SafeArea(
+            top: false,
+            child: Scaffold(
+              appBar: AppBar(title: const Text("Plugin example app")),
               body: Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -92,84 +92,54 @@ class _MyAppState extends State<MyApp> {
               ),
               bottomNavigationBar: ValueListenableBuilder<bool>(
                 valueListenable: _discoverFinishedNotifier,
-                builder: (context, finished, child) => OverflowBar(
-                  alignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ElevatedButton(
-                      onPressed: switch (snapshot.connectionState) {
-                        ConnectionState.done =>
-                          finished && (snapshot.data == true) && (_selectedPrinter != null)
-                              ? _printTest
-                              : null,
-                        _ => null,
-                      },
-                      child: const Text("Print"),
-                    ),
-                    ElevatedButton(
-                      onPressed: switch (snapshot.connectionState) {
-                        ConnectionState.done =>
-                          finished && (snapshot.data == true) && (_selectedPrinter != null)
-                              ? _printTestImage
-                              : null,
-                        _ => null,
-                      },
-                      child: const Text("Print image"),
-                    ),
-                    ElevatedButton(
-                      onPressed: switch (snapshot.connectionState) {
-                        ConnectionState.done =>
-                          finished || snapshot.data == true ? _startDiscovery : null,
-                        _ => null,
-                      },
-                      child: const Text("Find printers"),
-                    ),
-                    ElevatedButton(
-                      onPressed: switch (snapshot.connectionState) {
-                        ConnectionState.done =>
-                          finished && (snapshot.data == true) && (_selectedPrinter != null)
-                              ? () => _plugin.connect(address: _selectedPrinter!.address)
-                              : null,
-                        _ => null,
-                      },
-                      child: const Text("Connect"),
-                    ),
-                    ElevatedButton(
-                      onPressed: _plugin.disconnect,
-                      child: const Text("Disconnect"),
-                    ),
-                  ],
+                builder: (context, finished, child) => Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: OverflowBar(
+                    alignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      PrintTestButton(
+                        plugin: _plugin,
+                        enabled: switch (snapshot.connectionState) {
+                          ConnectionState.done =>
+                            finished && (snapshot.data == true) && (_selectedPrinter != null),
+                          _ => false,
+                        },
+                      ),
+                      PrintImageButton(
+                        plugin: _plugin,
+                        enabled: switch (snapshot.connectionState) {
+                          ConnectionState.done =>
+                            finished && (snapshot.data == true) && (_selectedPrinter != null),
+                          _ => false,
+                        },
+                      ),
+                      FindPrintersButton(
+                        plugin: _plugin,
+                        enabled: switch (snapshot.connectionState) {
+                          ConnectionState.done => finished || snapshot.data == true,
+                          _ => false,
+                        },
+                        onDiscoveryFinished: (value) => _discoverFinishedNotifier.value = value,
+                        onPrintersChanged: (value) => _printersNotifier.value = {...value},
+                      ),
+                      AppElevatedButton.connect(
+                        switch (snapshot.connectionState) {
+                          ConnectionState.done =>
+                            finished && (snapshot.data == true) && (_selectedPrinter != null)
+                                ? () => _plugin.connect(address: _selectedPrinter!.address)
+                                : null,
+                          _ => null,
+                        },
+                      ),
+                      AppElevatedButton.disconnect(_plugin.disconnect),
+                    ],
+                  ),
                 ),
               ),
-            );
-          },
+            ),
+          ),
         ),
       );
-
-  Future<void> _printTestImage() async {
-    const fileName = "print-test.png";
-    final bytes = await rootBundle.load("assets/$fileName");
-    final dir = await getApplicationDocumentsDirectory();
-    final filePath = "${dir.path}/$fileName";
-    final file = await File(filePath).writeAsBytes(bytes.buffer.asUint8List());
-    await Future.delayed(const Duration(milliseconds: 500));
-    await _plugin.printImageFile(filePath: file.path, x: 10);
-    await Future.delayed(const Duration(milliseconds: 500));
-  }
-
-  void _printTest() {
-    var string = "! 0 200 200 210 1\r\n";
-    string += "TEXT 4 0 30 40 Ola Field OS!!1\r\n";
-    string += "PRINT\r\n";
-    _plugin.write(data: string);
-  }
-
-  Future<void> _startDiscovery() async {
-    _discoverFinishedNotifier.value = false;
-    _plugin.startDiscovery().then((value) {
-      _discoverFinishedNotifier.value = true;
-      _printersNotifier.value = {...?value};
-    });
-  }
 
   Future<bool> _requestPermissions() async {
     final isEnabled = await BluetoothPermissions.isEnabled;
