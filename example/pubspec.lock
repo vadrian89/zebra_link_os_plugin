@@ -416,11 +416,11 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: d0ad756a2314dbcf1d6c0655dd85a3eb5c1c5571
-      resolved-ref: d0ad756a2314dbcf1d6c0655dd85a3eb5c1c5571
+      ref: "126388813eb767dcb13f4d0538b9859d561b131f"
+      resolved-ref: "126388813eb767dcb13f4d0538b9859d561b131f"
       url: "https://github.com/vadrian89/zebra_link_os_android"
     source: git
-    version: "0.0.1"
+    version: "0.0.2"
   zebra_link_os_platform_core:
     dependency: transitive
     description:
