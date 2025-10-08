@@ -416,11 +416,11 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: "126388813eb767dcb13f4d0538b9859d561b131f"
-      resolved-ref: "126388813eb767dcb13f4d0538b9859d561b131f"
+      ref: "5c11b695e8c768b9eba7e0ac6c24b8e3a88e1464"
+      resolved-ref: "5c11b695e8c768b9eba7e0ac6c24b8e3a88e1464"
       url: "https://github.com/vadrian89/zebra_link_os_android"
     source: git
-    version: "0.0.2"
+    version: "0.0.3"
   zebra_link_os_platform_core:
     dependency: transitive
     description:
@@ -436,7 +436,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.2"
 sdks:
   dart: ">=3.4.0 <4.0.0"
   flutter: ">=3.22.0"
