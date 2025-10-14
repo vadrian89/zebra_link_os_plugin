@@ -1,3 +1,13 @@
+## 0.0.4 (14.10.2025)
+* Updated zebra_link_os_android to v0.0.4
+* Changed compileSdk in example to 35
+* Changed minSdkVersion in example to 29
+* Changed Java version used in example to 17
+* Added android.permission.BLUETOOTH_ADMIN permission to example
+* Changed fvm version used in example to 3.29.3
+* Updated gradle version used in example to 8.11.1
+* Updated gradle plugin version used in example to 8.9.3
+
 ## 0.0.3 (08.10.2025)
 * Changed zebra_link_os_android to be used with Android SDK 34
 
