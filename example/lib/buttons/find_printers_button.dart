@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:zebra_link_os_plugin/zebra_link_os.dart';
 
@@ -23,10 +25,14 @@ class FindPrintersButton extends StatelessWidget {
       );
 
   Future<void> _startDiscovery() async {
-    onDiscoveryFinished(false);
-    plugin.startDiscovery().then((value) {
-      onPrintersChanged({...?value});
-      onDiscoveryFinished(true);
-    });
+    try {
+      onDiscoveryFinished(false);
+      await plugin.startDiscovery().then((value) {
+        onPrintersChanged({...?value});
+        onDiscoveryFinished(true);
+      });
+    } on ZebraLinkOsException catch (e) {
+      log(e.message, stackTrace: e.stackTrace);
+    }
   }
 }
