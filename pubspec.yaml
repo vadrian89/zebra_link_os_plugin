@@ -12,14 +12,13 @@ dependencies:
   flutter:
     sdk: flutter
   zebra_link_os_android: 
-    # path: ../zebra_link_os_android
     git: 
-      url: https://github.com/vadrian89/zebra_link_os_android
-      ref: bdd2d328cf5b63d85eb5e59be44e17204418c6ab
+      url: https://github.com/vadrian89/zebra_link_os_android.git
+      # ref: bdd2d328cf5b63d85eb5e59be44e17204418c6ab
   zebra_link_os_platform_core: 
     git: 
-      url: https://github.com/vadrian89/zebra_link_os_platform_core
-      ref: 5f4780aad1c1021395b381ea5e474068ecd4dcb9
+      url: https://github.com/vadrian89/zebra_link_os_platform_core.git
+      # ref: 5f4780aad1c1021395b381ea5e474068ecd4dcb9
 
 dev_dependencies:
   flutter_test:

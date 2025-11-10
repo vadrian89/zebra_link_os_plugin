@@ -1,0 +1,6 @@
+[submodule "packages/zebra_link_os_android"]
+	path = packages/zebra_link_os_android
+	url = https://github.com/vadrian89/zebra_link_os_android
+[submodule "packages/zebra_link_os_platform_core"]
+	path = packages/zebra_link_os_platform_core
+	url = https://github.com/vadrian89/zebra_link_os_platform_core
