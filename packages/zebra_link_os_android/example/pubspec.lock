@@ -5,10 +5,10 @@ packages:
     dependency: transitive
     description:
       name: args
-      sha256: d0481093c50b1da8910eb0bb301626d4d8eb7284aa739614d2b394ee09e3ea04
+      sha256: "7cf60b9f0cc88203c5a190b4cd62a99feea42759a7fa695010eb5de1c0b2252a"
       url: "https://pub.dev"
     source: hosted
-    version: "2.7.0"
+    version: "2.5.0"
   async:
     dependency: transitive
     description:
@@ -211,18 +211,18 @@ packages:
     dependency: transitive
     description:
       name: path_provider_android
-      sha256: "6f01f8e37ec30b07bc424b4deabac37cacb1bc7e2e515ad74486039918a37eb7"
+      sha256: a248d8146ee5983446bf03ed5ea8f6533129a12b11f12057ad1b4a67a2b3b41d
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.10"
+    version: "2.2.4"
   path_provider_foundation:
     dependency: transitive
     description:
       name: path_provider_foundation
-      sha256: "4843174df4d288f5e29185bd6e72a6fbdf5a4a4602717eed565497429f179942"
+      sha256: f234384a3fdd67f989b4d54a5d73ca2a6c422fa55ae694381ae0f4375cd1ea16
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.1"
+    version: "2.4.0"
   path_provider_linux:
     dependency: transitive
     description:
@@ -413,26 +413,19 @@ packages:
     source: hosted
     version: "1.0.4"
   zebra_link_os_android:
-    dependency: transitive
+    dependency: "direct main"
     description:
-      path: "../packages/zebra_link_os_android"
+      path: ".."
       relative: true
     source: path
     version: "0.0.6"
   zebra_link_os_platform_core:
     dependency: transitive
     description:
-      path: "../packages/zebra_link_os_platform_core"
+      path: "../../zebra_link_os_platform_core"
       relative: true
     source: path
     version: "0.0.2"
-  zebra_link_os_plugin:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.5"
 sdks:
   dart: ">=3.7.0-0 <4.0.0"
-  flutter: ">=3.22.0"
+  flutter: ">=3.18.0-18.0.pre.54"

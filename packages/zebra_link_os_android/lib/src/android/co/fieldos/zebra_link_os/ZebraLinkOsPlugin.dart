@@ -40,6 +40,84 @@ import 'DiscoveryHandlerBluetooth.dart' as discoveryhandlerbluetooth_;
 
 import 'ResultCallbacksInterface.dart' as resultcallbacksinterface_;
 
+/// from: `co.fieldos.zebra_link_os.ZebraLinkOsPlugin$Companion`
+class ZebraLinkOsPlugin_Companion extends _$jni.JObject {
+  @_$jni.internal
+  @_$core.override
+  final _$jni.JObjType<ZebraLinkOsPlugin_Companion> $type;
+
+  @_$jni.internal
+  ZebraLinkOsPlugin_Companion.fromReference(
+    _$jni.JReference reference,
+  )   : $type = type,
+        super.fromReference(reference);
+
+  static final _class = _$jni.JClass.forName(
+      r'co/fieldos/zebra_link_os/ZebraLinkOsPlugin$Companion');
+
+  /// The type which includes information such as the signature of this class.
+  static const type = $ZebraLinkOsPlugin_Companion$Type();
+  static final _id_new$ = _class.constructorId(
+    r'(Lkotlin/jvm/internal/DefaultConstructorMarker;)V',
+  );
+
+  static final _new$ = _$jni.ProtectedJniExtensions.lookup<
+              _$jni.NativeFunction<
+                  _$jni.JniResult Function(
+                      _$jni.Pointer<_$jni.Void>,
+                      _$jni.JMethodIDPtr,
+                      _$jni.VarArgs<(_$jni.Pointer<_$jni.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          _$jni.JniResult Function(_$jni.Pointer<_$jni.Void>,
+              _$jni.JMethodIDPtr, _$jni.Pointer<_$jni.Void>)>();
+
+  /// from: `synthetic public void <init>(kotlin.jvm.internal.DefaultConstructorMarker defaultConstructorMarker)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory ZebraLinkOsPlugin_Companion(
+    _$jni.JObject defaultConstructorMarker,
+  ) {
+    return ZebraLinkOsPlugin_Companion.fromReference(_new$(
+            _class.reference.pointer,
+            _id_new$ as _$jni.JMethodIDPtr,
+            defaultConstructorMarker.reference.pointer)
+        .reference);
+  }
+}
+
+final class $ZebraLinkOsPlugin_Companion$Type
+    extends _$jni.JObjType<ZebraLinkOsPlugin_Companion> {
+  @_$jni.internal
+  const $ZebraLinkOsPlugin_Companion$Type();
+
+  @_$jni.internal
+  @_$core.override
+  String get signature =>
+      r'Lco/fieldos/zebra_link_os/ZebraLinkOsPlugin$Companion;';
+
+  @_$jni.internal
+  @_$core.override
+  ZebraLinkOsPlugin_Companion fromReference(_$jni.JReference reference) =>
+      ZebraLinkOsPlugin_Companion.fromReference(reference);
+
+  @_$jni.internal
+  @_$core.override
+  _$jni.JObjType get superType => const _$jni.JObjectType();
+
+  @_$jni.internal
+  @_$core.override
+  final superCount = 1;
+
+  @_$core.override
+  int get hashCode => ($ZebraLinkOsPlugin_Companion$Type).hashCode;
+
+  @_$core.override
+  bool operator ==(Object other) {
+    return other.runtimeType == ($ZebraLinkOsPlugin_Companion$Type) &&
+        other is $ZebraLinkOsPlugin_Companion$Type;
+  }
+}
+
 /// from: `co.fieldos.zebra_link_os.ZebraLinkOsPlugin`
 class ZebraLinkOsPlugin extends _$jni.JObject {
   @_$jni.internal
@@ -57,6 +135,16 @@ class ZebraLinkOsPlugin extends _$jni.JObject {
 
   /// The type which includes information such as the signature of this class.
   static const type = $ZebraLinkOsPlugin$Type();
+  static final _id_Companion = _class.staticFieldId(
+    r'Companion',
+    r'Lco/fieldos/zebra_link_os/ZebraLinkOsPlugin$Companion;',
+  );
+
+  /// from: `static public final co.fieldos.zebra_link_os.ZebraLinkOsPlugin$Companion Companion`
+  /// The returned object must be released after use, by calling the [release] method.
+  static ZebraLinkOsPlugin_Companion get Companion =>
+      _id_Companion.get(_class, const $ZebraLinkOsPlugin_Companion$Type());
+
   static final _id_new$ = _class.constructorId(
     r'(Landroid/content/Context;)V',
   );
