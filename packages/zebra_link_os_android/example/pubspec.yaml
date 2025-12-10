@@ -18,7 +18,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
-  path_provider: ^2.1.4
+  path_provider: ^2.1.5
   zebra_link_os_android:
     path: ../
 
