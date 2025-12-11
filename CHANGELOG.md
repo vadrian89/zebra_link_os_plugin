@@ -4,6 +4,8 @@
 * Upgraded Android Kotlin version to 2.1.21
 * Updated example permissions_handler version to 12.0.1
 * Updated example path_provider version to 2.1.5
+* Added zebra_link_os_android to the structure of the package
+* Added zebra_link_os_platform_core to the structure of the package
 
 ## 0.0.5
 * Updated zebra_link_os_android to [v0.0.5](https://github.com/vadrian89/zebra_link_os_android/commit/bdd2d328cf5b63d85eb5e59be44e17204418c6ab)
