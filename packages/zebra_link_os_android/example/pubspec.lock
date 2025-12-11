@@ -123,10 +123,10 @@ packages:
     dependency: transitive
     description:
       name: jni
-      sha256: "459727a9daf91bdfb39b014cf3c186cf77f0136124a274ac83c186e12262ac4e"
+      sha256: d2c361082d554d4593c3012e26f6b188f902acd291330f13d6427641a92b3da1
       url: "https://pub.dev"
     source: hosted
-    version: "0.12.2"
+    version: "0.14.2"
   leak_tracker:
     dependency: transitive
     description:

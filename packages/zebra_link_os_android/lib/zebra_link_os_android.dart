@@ -5,7 +5,7 @@ import 'package:jni/jni.dart';
 import 'package:zebra_link_os_platform_core/classes.dart';
 import 'package:zebra_link_os_platform_core/zebra_link_os_plugin.dart';
 
-import 'src/android/classes/jni_utils.dart';
+import 'src/core/classes/jni_utils.dart';
 import 'src/android/co/fieldos/zebra_link_os/_package.dart';
 import 'src/android/com/zebra/sdk/printer/discovery/_package.dart' as z;
 import 'src/core/classes/discovery_handler_base.dart';
@@ -198,8 +198,8 @@ final class _DiscoveryHandlerBluetooth extends DiscoveryHandlerBase
   @override
   void onFound(z.DiscoveredPrinterBluetooth printer) => onFoundPrinter?.call(
         DiscoveredPrinterBluetooth(
-          address: printer.address.toDartString(),
-          friendlyName: printer.friendlyName.toDartString(),
+          address: printer.address?.toDartString() ?? "",
+          friendlyName: printer.friendlyName?.toDartString() ?? "",
         ),
       );
 }
