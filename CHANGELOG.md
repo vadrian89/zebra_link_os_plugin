@@ -1,3 +1,10 @@
+## 0.0.6
+* Upgraded Android Gradle plugin version to 8.13.1
+* Upgraded Android compileSdk version to 36
+* Upgraded Android Kotlin version to 2.1.21
+* Updated example permissions_handler version to 12.0.1
+* Updated example path_provider version to 2.1.5
+
 ## 0.0.5
 * Updated zebra_link_os_android to [v0.0.5](https://github.com/vadrian89/zebra_link_os_android/commit/bdd2d328cf5b63d85eb5e59be44e17204418c6ab)
 * Updated zebra_link_os_platform_core version to [0.0.2](https://github.com/vadrian89/zebra_link_os_platform_core/commit/5f4780aad1c1021395b381ea5e474068ecd4dcb9)
