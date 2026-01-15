@@ -5,29 +5,32 @@ import 'package:zebra_link_os_platform_core/zebra_link_os_plugin.dart';
 export 'core.dart';
 
 class ZebraLinkOs implements ZebraLinkOsPluginInterface {
-  ZebraLinkOsPluginBase get _instance => ZebraLinkOsPluginBase.instance;
+  static ZebraLinkOs? _instance;
 
-  ZebraLinkOsPluginBase get pluginInstance => _instance;
+  ZebraLinkOsPluginBase get _pluginInstance => ZebraLinkOsPluginBase.instance;
 
-  ZebraLinkOs();
+  const ZebraLinkOs._();
 
-  @override
-  Stream<DiscoveredPrinter> get printerFound => _instance.printerFound;
-
-  @override
-  Future<List<DiscoveredPrinter>?> startDiscovery() => _instance.startDiscovery();
+  /// Retrieve the instance of [ZebraLinkOs]
+  factory ZebraLinkOs() => _instance ??= const ZebraLinkOs._();
 
   @override
-  Future<void> dispose() => _instance.dispose();
+  Stream<DiscoveredPrinter> get printerFound => _pluginInstance.printerFound;
 
   @override
-  Future<bool> connect({required String address}) => _instance.connect(address: address);
+  Future<List<DiscoveredPrinter>?> startDiscovery() => _pluginInstance.startDiscovery();
 
   @override
-  Future<bool> disconnect() => _instance.disconnect();
+  Future<void> dispose() => _pluginInstance.dispose();
 
   @override
-  Future<bool> write({required String data}) => _instance.write(data: data);
+  Future<bool> connect({required String address}) => _pluginInstance.connect(address: address);
+
+  @override
+  Future<bool> disconnect() => _pluginInstance.disconnect();
+
+  @override
+  Future<bool> write({required String data}) => _pluginInstance.write(data: data);
 
   @override
   Future<bool> printImageFile({
@@ -38,7 +41,7 @@ class ZebraLinkOs implements ZebraLinkOsPluginInterface {
     int y = 0,
     bool insideFormat = false,
   }) =>
-      _instance.printImageFile(
+      _pluginInstance.printImageFile(
         filePath: filePath,
         width: width,
         height: height,
@@ -54,7 +57,7 @@ class ZebraLinkOs implements ZebraLinkOsPluginInterface {
     int width = 0,
     int height = 0,
   }) =>
-      _instance.storeImage(
+      _pluginInstance.storeImage(
         filePath: filePath,
         deviceDriveAndFileName: deviceDriveAndFileName,
         width: width,
