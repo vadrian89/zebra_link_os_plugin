@@ -1,3 +1,11 @@
+## 0.0.7
+* Updated zebra_link_os_android to version 0.0.7; For details see [changelog](https://github.com/vadrian89/zebra_link_os_android/commit/752898f17efe34a28cad5659116ea8edec34ca10)
+* Updated zebra_link_os_android dependency to be fetched from Github
+* Removed local zebra_link_os_android package
+* Updated zebra_link_os_platform_core dependency to be fetched from Github
+* Removed local zebra_link_os_platform_core package
+* Updated minim Flutter SDK to 3.32.0, to match zebra_link_os_android
+
 ## 0.0.6
 * Upgraded Android Gradle plugin version to 8.13.1
 * Upgraded Android compileSdk version to 36

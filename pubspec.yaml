@@ -1,12 +1,12 @@
 name: zebra_link_os_plugin
 description: "A new Flutter plugin project."
-version: 0.0.6
+version: 0.0.7
 # homepage:
 publish_to: 'none'
 
 environment:
   sdk: '>=3.3.4 <4.0.0'
-  flutter: '>=3.3.0'
+  flutter: '>=3.32.0'
 
 dependencies:
   flutter:
