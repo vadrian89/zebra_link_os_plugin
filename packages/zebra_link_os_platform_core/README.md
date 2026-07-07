@@ -1,1 +1,0 @@
-# zebra_link_os_platform_core
