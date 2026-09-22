@@ -1,3 +1,15 @@
+## 0.0.8
+* Updated zebra_link_os_android dependency to version ^0.0.8
+* Updated zebra_link_os_platform_core to version 0.0.7
+* Updated minimum Flutter SDK to 3.44.0
+* Updated fvm and VS Code Flutter SDK path to 3.44.9
+* Upgraded Android Gradle plugin version to 9.0.1
+* Upgraded Android Kotlin version to 2.3.20
+* Upgraded Android Gradle wrapper to 9.1.0
+* Upgraded example compileSdk version to 37
+* Removed kotlin-android plugin id and kotlinOptions block from example, in favor of the new Kotlin DSL compilerOptions block
+* Updated example gradle.properties: enabled android.nonFinalResIds, added android.builtInKotlin and android.newDsl flags, removed android.defaults.buildfeatures.buildconfig flag
+
 ## 0.0.7
 * Updated zebra_link_os_android to version 0.0.7; For details see [changelog](https://github.com/vadrian89/zebra_link_os_android/commit/752898f17efe34a28cad5659116ea8edec34ca10)
 * Updated zebra_link_os_android dependency to be fetched from Github
